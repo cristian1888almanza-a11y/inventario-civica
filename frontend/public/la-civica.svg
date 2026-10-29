@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 190" role="img" aria-labelledby="title">
+  <title id="title">La Civica Grupo Empresarial</title>
+  <path fill="#073957" d="M126 9C75 9 34 37 17 80c-18 45-3 87 34 105 39 19 82 1 101-40l-40-2c-10 17-31 22-49 11-22-13-29-39-18-66 11-28 34-47 62-51 18-3 33 2 45 13l22-29c-14-8-30-12-48-12Z"/>
+  <path fill="#0098bd" d="M101 40c23-18 54-22 83-12l-28 44c-20-4-39 4-53 21-11 13-16 29-13 45-22-14-30-38-22-61 6-17 17-30 33-37Z"/>
+  <path fill="#f5e35c" d="M44 160c16 19 42 28 68 21 29-8 50-33 54-65l39-3c-1 39-25 72-60 88-36 17-78 9-106-14-8-7-14-15-19-25 8 6 16 5 24-2Z"/>
+  <text x="205" y="91" fill="#073957" font-family="Arial, Helvetica, sans-serif" font-size="70" font-weight="700" letter-spacing="2">LA CIVICA</text>
+  <text x="207" y="124" fill="#0098bd" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600" letter-spacing="9">GRUPO · EMPRESARIAL</text>
+  <text x="207" y="157" fill="#315a70" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" letter-spacing=".3">SOFTWARE - HARDWARE - INGENIERIA - IMPRESOS</text>
+</svg>

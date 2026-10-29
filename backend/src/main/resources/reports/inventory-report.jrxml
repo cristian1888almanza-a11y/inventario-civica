@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport name="inventory-report" pageWidth="842" pageHeight="595" orientation="Landscape"
+              columnWidth="786" leftMargin="28" rightMargin="28" topMargin="24" bottomMargin="24">
+    <field name="sku" class="java.lang.String"/>
+    <field name="name" class="java.lang.String"/>
+    <field name="category" class="java.lang.String"/>
+    <field name="description" class="java.lang.String"/>
+    <field name="supplier" class="java.lang.String"/>
+    <title height="62">
+            <staticText>
+                <reportElement x="0" y="0" width="500" height="28" forecolor="#24324A"/>
+                <textElement><font size="20" isBold="true"/></textElement>
+                <text><![CDATA[Reporte de inventario]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="32" width="600" height="18" forecolor="#667085"/>
+                <textElement><font size="10"/></textElement>
+                <text><![CDATA[Productos, categorías, descripciones y proveedores registrados]]></text>
+            </staticText>
+    </title>
+    <columnHeader height="28">
+            <staticText><reportElement x="0" y="0" width="75" height="25" mode="Opaque" backcolor="#F0F2F8"/><textElement verticalAlignment="Middle"><font size="8" isBold="true"/></textElement><text><![CDATA[SKU]]></text></staticText>
+            <staticText><reportElement x="75" y="0" width="145" height="25" mode="Opaque" backcolor="#F0F2F8"/><textElement verticalAlignment="Middle"><font size="8" isBold="true"/></textElement><text><![CDATA[PRODUCTO]]></text></staticText>
+            <staticText><reportElement x="220" y="0" width="100" height="25" mode="Opaque" backcolor="#F0F2F8"/><textElement verticalAlignment="Middle"><font size="8" isBold="true"/></textElement><text><![CDATA[CATEGORÍA]]></text></staticText>
+            <staticText><reportElement x="320" y="0" width="260" height="25" mode="Opaque" backcolor="#F0F2F8"/><textElement verticalAlignment="Middle"><font size="8" isBold="true"/></textElement><text><![CDATA[DESCRIPCIÓN / NOTAS]]></text></staticText>
+            <staticText><reportElement x="580" y="0" width="206" height="25" mode="Opaque" backcolor="#F0F2F8"/><textElement verticalAlignment="Middle"><font size="8" isBold="true"/></textElement><text><![CDATA[PROVEEDOR]]></text></staticText>
+    </columnHeader>
+    <detail>
+        <band height="34">
+            <textField isStretchWithOverflow="true"><reportElement x="0" y="0" width="75" height="32"/><textElement verticalAlignment="Middle"><font size="8"/></textElement><textFieldExpression><![CDATA[$F{sku}]]></textFieldExpression></textField>
+            <textField isStretchWithOverflow="true"><reportElement x="75" y="0" width="145" height="32"/><textElement verticalAlignment="Middle"><font size="8"/></textElement><textFieldExpression><![CDATA[$F{name}]]></textFieldExpression></textField>
+            <textField isStretchWithOverflow="true"><reportElement x="220" y="0" width="100" height="32"/><textElement verticalAlignment="Middle"><font size="8"/></textElement><textFieldExpression><![CDATA[$F{category}]]></textFieldExpression></textField>
+            <textField isStretchWithOverflow="true"><reportElement x="320" y="0" width="260" height="32"/><textElement verticalAlignment="Middle"><font size="8"/></textElement><textFieldExpression><![CDATA[$F{description}]]></textFieldExpression></textField>
+            <textField isStretchWithOverflow="true"><reportElement x="580" y="0" width="206" height="32"/><textElement verticalAlignment="Middle"><font size="8"/></textElement><textFieldExpression><![CDATA[$F{supplier}]]></textFieldExpression></textField>
+            <line><reportElement x="0" y="33" width="786" height="1" forecolor="#EAECF0"/></line>
+        </band>
+    </detail>
+    <noData height="40"><staticText><reportElement x="0" y="8" width="500" height="22" forecolor="#667085"/><textElement><font size="11"/></textElement><text><![CDATA[No hay productos registrados en el inventario.]]></text></staticText>
+    </noData>
+</jasperReport>

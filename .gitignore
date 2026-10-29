@@ -1,0 +1,15 @@
+http://localhost:8080
+backend/target/
+backend/data/
+frontend/node_modules/
+frontend/dist/
+*.log
+
+# Local database and generated artifacts
+data/
+backend/*.class
+backend/cp.txt
+backend/test-output.txt
+backend/test_output.txt
+backend/testlog.txt
+frontend/.angular/
