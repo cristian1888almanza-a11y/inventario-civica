@@ -40,7 +40,7 @@ This repository contains a full-stack inventory/business-management app with a S
 - The app is a Spring Boot 3.x service with REST controllers, JPA repositories, DTOs, and a security layer.
 - Authentication is based on Spring Security sessions/cookies, not JWT. Preserve the current auth flow and role checks.
 - The application has an admin bootstrap flow (`/auth/setup`), employee/user management, and inventory/business modules.
-- The default development database is H2 with a local file store under [backend/data](backend/data). MySQL is supported via the `mysql` Spring profile.
+- The default development database is PostgreSQL, using the local Docker service defined in [docker-compose.yml](docker-compose.yml). MySQL is supported via the `mysql` Spring profile.
 - The project uses JasperReports for PDF exports; report templates live under [backend/src/main/resources/reports](backend/src/main/resources/reports).
 - Frontend is Angular 20 with standalone components and reactive forms; keep changes aligned with the existing service/model abstractions.
 

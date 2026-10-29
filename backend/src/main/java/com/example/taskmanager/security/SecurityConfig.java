@@ -35,11 +35,11 @@ public class SecurityConfig {
             .csrf(csrf -> csrf
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                 .csrfTokenRequestHandler(new CsrfTokenRequestAttributeHandler())
-                .ignoringRequestMatchers("/h2-console/**"))
+                )
             .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()))
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
             .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/auth/csrf", "/auth/setup-status", "/auth/setup", "/auth/login", "/h2-console/**").permitAll()
+                .requestMatchers("/auth/csrf", "/auth/setup-status", "/auth/setup", "/auth/login").permitAll()
                 .requestMatchers("/users/**").hasRole("ADMIN")
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated())

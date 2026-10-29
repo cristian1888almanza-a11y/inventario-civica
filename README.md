@@ -5,11 +5,11 @@ Sistema de inventario **La Cívica Inventario**, con dashboard responsive en Ang
 ## Tecnologías
 
 - Java 25, Spring Boot 3.5, Spring Data JPA y Bean Validation
-- MySQL para instalaciones persistentes; H2 en memoria para desarrollo rápido y pruebas
+- PostgreSQL para desarrollo y despliegues con Docker; MySQL como perfil alternativo
 - JasperReports 6.21
 - Angular 20, TypeScript y Reactive Forms
 
-## Iniciar en desarrollo (H2)
+## Iniciar en desarrollo (PostgreSQL)
 
 Requisitos: Java 25, Maven 3.9+ y Node.js 22+.
 
@@ -26,7 +26,7 @@ npm install
 npm start
 ```
 
-Abre `http://localhost:4200`. La configuración predeterminada usa H2 en un archivo local (`backend/data/taskdb`) para conservar perfiles, productos y actividad cuando se reinicia el backend. La consola de desarrollo está en `http://localhost:8080/h2-console` (JDBC URL `jdbc:h2:file:./data/taskdb`, usuario `sa`, contraseña vacía). El archivo local de datos no se incluye en Git.
+Abre `http://localhost:4200`. La configuración predeterminada usa PostgreSQL en el servicio Docker definido en `docker-compose.yml` (`localhost:5432/inventorydb`, usuario `postgres`, contraseña `postgres`).
 
 En la primera visita, crea el perfil del administrador principal. Es la única ocasión en la que se permite el alta pública de una cuenta; después, solo el administrador autenticado puede dar de alta empleados desde **Usuarios**. Las contraseñas requieren al menos 12 caracteres y se almacenan con BCrypt. El administrador puede desactivar empleados; solo las cuentas activas pueden iniciar sesión.
 
@@ -48,7 +48,7 @@ También puedes definir `DB_URL`, `DB_USERNAME` y `DB_PASSWORD` en el entorno an
 
 En **Gestión de activos** puedes consultar valores históricos y en libros a una fecha de corte, registrar depreciación mensual y filtrar por categoría, fechas, estado, responsable y ubicación. La vida útil y la tasa anual se guardan en `asset_categories`; los saldos y asientos se conservan en `assets` y `depreciation_records`. El cálculo es de línea recta con redondeo a dos decimales y no modifica el valor histórico del activo.
 
-Las categorías iniciales se crean automáticamente al iniciar el backend. Para aplicar manualmente la precisión de tasa y sembrar esas categorías en una base existente, ejecuta el script de esquema correspondiente (`backend/db/asset-depreciation-h2.sql` o `backend/db/asset-depreciation-mysql.sql`) y después `backend/db/asset-depreciation-categories.sql`. Los inserts de categorías son idempotentes.
+Las categorías iniciales se crean automáticamente al iniciar el backend. Para aplicar manualmente la precisión de tasa y sembrar esas categorías en una base existente, ejecuta `backend/db/asset-depreciation-categories.sql`. Los inserts de categorías son idempotentes.
 
 ## Inventario
 
