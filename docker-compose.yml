@@ -2,7 +2,7 @@ name: fullstack-task-manager
 
 services:
   postgres:
-    image: postgres:17-alpine
+    image: postgres:15-alpine
     container_name: task-manager-db
     restart: unless-stopped
     environment:
